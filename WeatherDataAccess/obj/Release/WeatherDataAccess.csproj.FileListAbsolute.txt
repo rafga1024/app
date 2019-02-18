@@ -1,0 +1,24 @@
+C:\Users\Admin\Source\MVCDobry\App\WeatherDataAccess\bin\Release\WeatherDataAccess.dll.config
+C:\Users\Admin\Source\MVCDobry\App\WeatherDataAccess\bin\Release\WeatherDataAccess.dll
+C:\Users\Admin\Source\MVCDobry\App\WeatherDataAccess\bin\Release\WeatherDataAccess.pdb
+C:\Users\Admin\Source\MVCDobry\App\WeatherDataAccess\bin\Release\EntityFramework.dll
+C:\Users\Admin\Source\MVCDobry\App\WeatherDataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Admin\Source\MVCDobry\App\WeatherDataAccess\bin\Release\EntityFramework.xml
+C:\Users\Admin\Source\MVCDobry\App\WeatherDataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Admin\Source\MVCDobry\App\WeatherDataAccess\obj\Release\WeatherDataAccess.csprojAssemblyReference.cache
+C:\Users\Admin\Source\MVCDobry\App\WeatherDataAccess\obj\Release\WeatherDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Source\MVCDobry\App\WeatherDataAccess\obj\Release\WeatherDataAccess.csproj.CopyComplete
+C:\Users\Admin\Source\MVCDobry\App\WeatherDataAccess\obj\Release\WeatherDataAccess.dll
+C:\Users\Admin\Source\MVCDobry\App\WeatherDataAccess\obj\Release\WeatherDataAccess.pdb
+C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherDataAccess\bin\Release\WeatherDataAccess.dll.config
+C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherDataAccess\bin\Release\WeatherDataAccess.dll
+C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherDataAccess\bin\Release\WeatherDataAccess.pdb
+C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherDataAccess\bin\Release\EntityFramework.dll
+C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherDataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherDataAccess\bin\Release\EntityFramework.xml
+C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherDataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherDataAccess\obj\Release\WeatherDataAccess.csprojAssemblyReference.cache
+C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherDataAccess\obj\Release\WeatherDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherDataAccess\obj\Release\WeatherDataAccess.csproj.CopyComplete
+C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherDataAccess\obj\Release\WeatherDataAccess.dll
+C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherDataAccess\obj\Release\WeatherDataAccess.pdb

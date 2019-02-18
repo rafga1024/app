@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBweatherModelStoreContainer" CdmEntityContainer="DBweatherEntities">
+    <EntitySetMapping Name="UserLogins">
+      <EntityTypeMapping TypeName="DBweatherModel.UserLogin">
+        <MappingFragment StoreEntitySet="UserLogin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clouds1">
+      <EntityTypeMapping TypeName="DBweatherModel.Clouds">
+        <MappingFragment StoreEntitySet="Clouds">
+          <ScalarProperty Name="all" ColumnName="all" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coords">
+      <EntityTypeMapping TypeName="DBweatherModel.Coord">
+        <MappingFragment StoreEntitySet="Coord">
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="lon" ColumnName="lon" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mains">
+      <EntityTypeMapping TypeName="DBweatherModel.Main">
+        <MappingFragment StoreEntitySet="Main">
+          <ScalarProperty Name="temp_max" ColumnName="temp_max " />
+          <ScalarProperty Name="temp_min" ColumnName="temp_min" />
+          <ScalarProperty Name="humidity" ColumnName="humidity" />
+          <ScalarProperty Name="pressure" ColumnName="pressure" />
+          <ScalarProperty Name="temp" ColumnName="temp" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OpenWeathers">
+      <EntityTypeMapping TypeName="DBweatherModel.OpenWeather">
+        <MappingFragment StoreEntitySet="OpenWeather">
+          <ScalarProperty Name="cod" ColumnName="cod" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idSys" ColumnName="idSys" />
+          <ScalarProperty Name="dt" ColumnName="dt" />
+          <ScalarProperty Name="idClouds" ColumnName="idClouds" />
+          <ScalarProperty Name="idWind" ColumnName="idWind" />
+          <ScalarProperty Name="visibility" ColumnName="visibility" />
+          <ScalarProperty Name="idMain" ColumnName="idMain" />
+          <ScalarProperty Name="base" ColumnName="base" />
+          <ScalarProperty Name="idCoord" ColumnName="idCoord" />
+          <ScalarProperty Name="idOpen" ColumnName="idOpen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys">
+      <EntityTypeMapping TypeName="DBweatherModel.Sys">
+        <MappingFragment StoreEntitySet="Sys">
+          <ScalarProperty Name="sunset" ColumnName="sunset" />
+          <ScalarProperty Name="sunrise" ColumnName="sunrise" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idSys" ColumnName="idSys" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Weathers">
+      <EntityTypeMapping TypeName="DBweatherModel.Weather">
+        <MappingFragment StoreEntitySet="Weather">
+          <ScalarProperty Name="idOpenWeather" ColumnName="idOpenWeather" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="main" ColumnName="main" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idWeather" ColumnName="idWeather" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Winds">
+      <EntityTypeMapping TypeName="DBweatherModel.Wind">
+        <MappingFragment StoreEntitySet="Wind">
+          <ScalarProperty Name="deg" ColumnName="deg" />
+          <ScalarProperty Name="speed" ColumnName="speed" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

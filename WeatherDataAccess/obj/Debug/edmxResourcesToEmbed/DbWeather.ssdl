@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBweatherModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Clouds">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="all" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Coord">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lon" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="lat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Main">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="temp" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="pressure" Type="int" Nullable="false" />
+    <Property Name="humidity" Type="int" Nullable="false" />
+    <Property Name="temp_min" Type="int" Nullable="false" />
+    <Property Name="temp_max " Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OpenWeather">
+    <Key>
+      <PropertyRef Name="idOpen" />
+    </Key>
+    <Property Name="idOpen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCoord" Type="int" Nullable="false" />
+    <Property Name="base" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="idMain" Type="int" Nullable="false" />
+    <Property Name="visibility" Type="int" Nullable="false" />
+    <Property Name="idWind" Type="int" Nullable="false" />
+    <Property Name="idClouds" Type="int" Nullable="false" />
+    <Property Name="dt" Type="int" Nullable="false" />
+    <Property Name="idSys" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys">
+    <Key>
+      <PropertyRef Name="idSys" />
+    </Key>
+    <Property Name="idSys" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="message" Type="decimal" Precision="7" Scale="4" Nullable="false" />
+    <Property Name="country" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sunrise" Type="int" Nullable="false" />
+    <Property Name="sunset" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="login" Type="varchar(max)" Nullable="false" />
+    <Property Name="password" Type="varchar(max)" Nullable="false" />
+    <Property Name="isAdmin" Type="bit" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Weather">
+    <Key>
+      <PropertyRef Name="idWeather" />
+    </Key>
+    <Property Name="idWeather" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="main" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="icon" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="idOpenWeather" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Wind">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="speed" Type="decimal" Precision="4" Scale="1" Nullable="false" />
+    <Property Name="deg" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_OpenWeather_Clouds">
+    <End Role="Clouds" Type="Self.Clouds" Multiplicity="1" />
+    <End Role="OpenWeather" Type="Self.OpenWeather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clouds">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OpenWeather">
+        <PropertyRef Name="idClouds" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OpenWeather_Coord">
+    <End Role="Coord" Type="Self.Coord" Multiplicity="1" />
+    <End Role="OpenWeather" Type="Self.OpenWeather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coord">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OpenWeather">
+        <PropertyRef Name="idCoord" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OpenWeather_Main">
+    <End Role="Main" Type="Self.Main" Multiplicity="1" />
+    <End Role="OpenWeather" Type="Self.OpenWeather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Main">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OpenWeather">
+        <PropertyRef Name="idMain" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OpenWeather_Sys">
+    <End Role="Sys" Type="Self.Sys" Multiplicity="1" />
+    <End Role="OpenWeather" Type="Self.OpenWeather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys">
+        <PropertyRef Name="idSys" />
+      </Principal>
+      <Dependent Role="OpenWeather">
+        <PropertyRef Name="idSys" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OpenWeather_Wind">
+    <End Role="Wind" Type="Self.Wind" Multiplicity="1" />
+    <End Role="OpenWeather" Type="Self.OpenWeather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Wind">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OpenWeather">
+        <PropertyRef Name="idWind" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Weather_OpenWeather">
+    <End Role="OpenWeather" Type="Self.OpenWeather" Multiplicity="1" />
+    <End Role="Weather" Type="Self.Weather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OpenWeather">
+        <PropertyRef Name="idOpen" />
+      </Principal>
+      <Dependent Role="Weather">
+        <PropertyRef Name="idOpenWeather" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBweatherModelStoreContainer">
+    <EntitySet Name="Clouds" EntityType="Self.Clouds" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Coord" EntityType="Self.Coord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Main" EntityType="Self.Main" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OpenWeather" EntityType="Self.OpenWeather" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sys" EntityType="Self.Sys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Weather" EntityType="Self.Weather" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Wind" EntityType="Self.Wind" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_OpenWeather_Clouds" Association="Self.FK_OpenWeather_Clouds">
+      <End Role="Clouds" EntitySet="Clouds" />
+      <End Role="OpenWeather" EntitySet="OpenWeather" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OpenWeather_Coord" Association="Self.FK_OpenWeather_Coord">
+      <End Role="Coord" EntitySet="Coord" />
+      <End Role="OpenWeather" EntitySet="OpenWeather" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OpenWeather_Main" Association="Self.FK_OpenWeather_Main">
+      <End Role="Main" EntitySet="Main" />
+      <End Role="OpenWeather" EntitySet="OpenWeather" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OpenWeather_Sys" Association="Self.FK_OpenWeather_Sys">
+      <End Role="Sys" EntitySet="Sys" />
+      <End Role="OpenWeather" EntitySet="OpenWeather" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OpenWeather_Wind" Association="Self.FK_OpenWeather_Wind">
+      <End Role="Wind" EntitySet="Wind" />
+      <End Role="OpenWeather" EntitySet="OpenWeather" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Weather_OpenWeather" Association="Self.FK_Weather_OpenWeather">
+      <End Role="OpenWeather" EntitySet="OpenWeather" />
+      <End Role="Weather" EntitySet="Weather" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

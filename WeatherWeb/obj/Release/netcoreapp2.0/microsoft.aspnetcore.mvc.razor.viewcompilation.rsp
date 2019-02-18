@@ -1,0 +1,16 @@
+C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=WeatherWeb
+--content-root=C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb
+--file=C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb\Views\Auth\AddUserAdmin.cshtml
+--file=C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb\Views\Auth\Login.cshtml
+--file=C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb\Views\Home\AddNewLocationWeather.cshtml
+--file=C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb\Views\Home\Index.cshtml
+--file=C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb\Views\Home\Register.cshtml
+--file=C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb\Views\Home\Weather.cshtml
+--file=C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb\Views\Home\WeatherDelete.cshtml
+--file=C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb\Views\Home\WeatherUpdate.cshtml
+--file=C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb\Views\Shared\Error.cshtml
+--file=C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb\Views\Shared\_Layout.cshtml
+--file=C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb\Views\_ViewImports.cshtml
+--file=C:\Users\Admin\Source\MVCDobry _Site_SOMEE_16_02_2019\App\WeatherWeb\Views\_ViewStart.cshtml

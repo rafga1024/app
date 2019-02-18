@@ -1,0 +1,40 @@
+﻿@model WeatherWeb.ViewModels.RegisterViewModel
+@{
+    ViewBag.Title = "Login";
+}
+@section scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>Add User Admin</h1>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+            @if (ViewBag.UserMessage != null)
+            {
+                <div>@ViewBag.UserMessage</div>
+            }
+            <div class="form-group">
+                <label asp-for="login">Login</label>
+                <input asp-for="login" class="form-control" />
+                <span asp-validation-for="login" class="text-muted"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="password">Password</label>
+                <input asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-muted"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email">E-mail</label>
+                <input type="email" asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-muted"></span>
+            </div>
+            <div class="form-group">
+                <a asp-controller="Home" asp-action="Weather" class="btn btn-default">Cancel</a>
+                <input type="submit" value="Register" class="btn btn-success" />
+            </div>
+        </form>
+
+    </div>
+</div>

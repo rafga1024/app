@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather - @ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="sidebar">
+        <img src="~/images/ico.png" width="50" height="50" />
+        <span id="userName">Weather</span>
+        <ul class="nav">
+            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <li><a asp-controller="Auth" asp-action="Login">Login</a></li>
+                <li><a asp-controller="Home" asp-action="Register">Register</a></li>
+            }
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li><a asp-controller="Auth" asp-action="Logout">Logout</a></li>
+            }
+            @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+            {
+                <li><a asp-controller="Home" asp-action="WeatherUpdate">Weather update</a></li>
+                <li><a asp-controller="Home" asp-action="AddNewLocationWeather">Add location</a></li>
+                <li><a asp-controller="Home" asp-action="WeatherDelete">Delete location</a></li>
+                <li><a asp-controller="Auth" asp-action="AddUserAdmin">Add Admin</a></li>
+            }
+        </ul>
+    </div>
+
+    <div id="wrapper">
+        <div id="main">
+
+            @RenderBody()
+        </div>
+        <div id="footer">
+            &copy; 2019 Weather
+        </div>
+    </div>
+    @RenderSection("scripts", false)
+</body>
+
+</html>

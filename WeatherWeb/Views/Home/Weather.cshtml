@@ -1,0 +1,100 @@
+﻿@model IEnumerable<WeatherWeb.ViewModels.OpenWeather>
+@{
+    ViewBag.Title = "Weather";
+}
+<ul class="locweather">
+@foreach (var Tmp in Model)
+{
+    <li>
+        <div class="loc">
+            <div class="locname">
+                <h1>@Tmp.name</h1>
+            </div>
+            <div class="locico">
+                @if (@Tmp.weather.FirstOrDefault().id == 800 && @Tmp.weather.FirstOrDefault().icon.Substring(2) == "d")
+                {
+                    <img src="~/images/clear_day.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id == 800 && @Tmp.weather.FirstOrDefault().icon.Substring(2) == "n")
+                {
+                    <img src="~/images/clear_night.png" />
+                }
+                @if ((@Tmp.weather.FirstOrDefault().id == 802 || Tmp.weather.FirstOrDefault().id == 803) && @Tmp.weather.FirstOrDefault().icon.Substring(2) == "d")
+                {
+                    <img src="~/images/broken_clouds_day.png" />
+                }
+                @if ((@Tmp.weather.FirstOrDefault().id == 802 || Tmp.weather.FirstOrDefault().id == 803) && @Tmp.weather.FirstOrDefault().icon.Substring(2) == "n")
+                {
+                    <img src="~/images/broken_clouds_night.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id == 804)
+                {
+                    <img src="~/images/overcast_clouds.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id >= 900 && Tmp.weather.FirstOrDefault().id < 903)
+                {
+                    <img src="~/images/extreme.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id == 903)
+                {
+                    <img src="~/images/cold.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id == 904)
+                {
+                    <img src="~/images/hot.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id == 905 && @Tmp.weather.FirstOrDefault().id > 951)
+                {
+                    <img src="~/images/windy.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id == 906 && @Tmp.weather.FirstOrDefault().id > 951)
+                {
+                    <img src="~/images/hail.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id >= 700 && @Tmp.weather.FirstOrDefault().id < 800)
+                {
+                    <img src="~/images/atmosphere.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id >= 600 && @Tmp.weather.FirstOrDefault().id < 700)
+                {
+                    <img src="~/images/snow.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id >= 500 && @Tmp.weather.FirstOrDefault().id < 600)
+                {
+                    <img src="~/images/rain.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id >= 300 && @Tmp.weather.FirstOrDefault().id < 500)
+                {
+                    <img src="~/images/drizzle.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id >= 200 && @Tmp.weather.FirstOrDefault().id < 300)
+                {
+                    <img src="~/images/thunderstorm.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id == 801 && @Tmp.weather.FirstOrDefault().icon.Substring(2) == "d")
+                {
+                    <img src="~/images/few_clouds_day.png" />
+                }
+                @if (@Tmp.weather.FirstOrDefault().id == 801 && @Tmp.weather.FirstOrDefault().icon.Substring(2) == "n")
+                {
+                    <img src="~/images/few_clouds_night.png" />
+                }
+            </div>
+            <div class="details">
+                <ul class="listdetails">
+                    <li>Country: @Tmp.sys.country</li>
+                    <li>Current Temperature: @(Math.Round((Tmp.main.temp - 273.15),2)) &deg;C</li>
+                    <li>Wind: @Tmp.wind.speed Km/h</li>
+                    <li>Humidity: @Tmp.main.humidity %</li>
+                    <li>Pressure: @Tmp.main.pressure hPa</li>
+                    <li>Visibility: @Tmp.visibility m</li>
+                    <li>Sunrise time:@DateTime.SpecifyKind(new DateTime(1970, 1, 1), DateTimeKind.Utc).AddSeconds(Tmp.sys.sunrise)</li>
+                    <li>Sunset time: @DateTime.SpecifyKind(new DateTime(1970, 1, 1), DateTimeKind.Utc).AddSeconds(@Tmp.sys.sunset) </li>
+                    <li>Weather: @Tmp.weather.FirstOrDefault().description</li>
+                </ul>
+            </div>
+        </div>
+    </li>
+}
+ </ul>
+
